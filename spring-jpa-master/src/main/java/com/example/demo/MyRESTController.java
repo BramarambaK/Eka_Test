@@ -27,7 +27,7 @@ public class MyRESTController {
 	}
 
 	// 2. Add a REST method to add a contact which is received as JSON
-	@PostMapping("/createContact")
+	@PostMapping(path = "/createContact", consumes = "application/json")
 	public ResponseEntity<Contact> createCustomer(@Valid Contact contact) {
 		// Return 200 Ok upon successful saving else return 400 bad request
 		if (contact != null) {
